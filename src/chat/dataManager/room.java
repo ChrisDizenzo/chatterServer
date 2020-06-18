@@ -12,12 +12,17 @@ public class room {
     private String time;
     private LinkedList<chat> chats;
 
-    public room(String id, int occ, String name, String desc, String t){
+    public room(String id, String name, String desc, String t){
         room_id = id;
         occupancy = 0;
         eventName = name;
         description = desc;
         time = t;
+        this.chats = new LinkedList<chat>();
+    }
+
+    public void addChat(chat c){
+        chats.add(c);
     }
 
     public void userJoined(){
@@ -52,6 +57,7 @@ public class room {
                 ", eventName='" + eventName + '\'' +
                 ", description='" + description + '\'' +
                 ", time='" + time + '\'' +
+                ", chats=" + chats +
                 '}';
     }
 
